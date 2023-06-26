@@ -3,24 +3,69 @@
         <title>Slider</title>
     </head>
     <style>
-        h1 {
-            font-family: sans-serif;
-            font-size: 50px;
-            color: #000;
+        .imageSlides {
+            display: none;
         }
-        .img-inner {
-            height: 200px;
-            width: 200px;
+
+        .imageSlides.active {
+            display: block;
+        }
+        
+        img {
+            margin: auto;
+            display: block;
+            width: 100%;
+            height: 400px;
+            transition: opacity 0.5s ease-in-out;
+        }
+        
+        .image-slider {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+        button {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            background-color: #000;
+            color: #ffff;
+            border-radius: 50%;
+        }
+        .previous {
+            left: 0;
+            right: auto;
+        }
+        .next {
+            right: 0;
+            left: auto;
         }
     </style>
-    <script src="class.js"></script>
+    <script src="slider.js"></script>
     <body>
         <h1>slider</h1>
         <p></p>
-        <img src="image/slider1.jpg">
-        <img src="image/slider2.jpg">
-        <img src="image/slider3.jpg">
-        <img src="image/slider4.jpg">
-        <img src="image/slider5.jpg">
+        <div class="image-slider" >
+            <div class="imageslides active">
+                <img src="image/slider1.jpg">
+            </div>
+            <div class="imageslides">
+                <img src="image/slider2.jpg">
+            </div>
+            <div class="imageSlides">
+                <img src="image/slider3.jpg">
+            </div>
+            <div class="imageslides">
+                <img src="image/slider4.jpg">
+            </div>
+            <div class="imageslides">
+                <img src="image/slider5.jpg">
+            </div>
+            <button class="previous" onclick="previousSlide()"><</button>
+            <button class="next" onclick="nextSlide()">></button>
+        </div>
     </body>
 </html>
