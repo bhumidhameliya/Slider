@@ -1,16 +1,12 @@
 <html>
   <head>
     <title>Slider</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <style>
-    /* body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    } */
     .imageSlides {
       display: none;
+      margin: 15px;
     }
 
     .imageSlides.active {
@@ -47,11 +43,18 @@
     .next {
       right: 0;
       left: auto;
-    } 
+    }
+
+    @media (max-width: 767px) {
+        .image-slider {
+            display: block;
+        }
+    }
   
   </style>
   <body>
-    <div class="image-slider">
+    <h1>Multi Slider & Responsive Slider</h1>
+      <div class="image-slider">
       <div class="imageslides active"><img src="image/s1.jpg" /></div>
       <div class="imageslides active"><img src="image/s2.jpg" /></div>
       <div class="imageSlides active"><img src="image/s3.jpg" /></div>
@@ -61,13 +64,14 @@
       <div class="imageSlides"><img src="image/s3.jpg" /></div>
       <div class="imageslides"><img src="image/s4.jpg" /></div>
       <div class="imageslides"><img src="image/s5.jpg" /></div>
+      <div class="imageslides"><img src="image/s3.jpg" /></div>
+      <div class="imageslides"><img src="image/s2.jpg" /></div>
       <div>
         <button class="previous" onclick="showDirection('previous')"><</button>
         <button class="next" onclick="showDirection('next')">></button>
       </div>
-    </div> 
+    </div>
    
-    
-  <script src="multiple_slider.js"></script>
+  <script src="multicomboslider.js"></script>
   </body>
 </html>
