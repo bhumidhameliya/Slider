@@ -1,10 +1,7 @@
 let currentSlide = 0;
 let a = 0;
 const slides = document.getElementsByClassName('imageSlides');
-// const slidesPerView = 3;
-
 function showSlide(n, a, d) {
-    console.log(n,a);
     if (d === 'next') {
         if (n < slides.length) {
             for (let i = 0; i < slides.length; i++) {
@@ -25,6 +22,12 @@ function showSlide(n, a, d) {
             }
         }
     }
+
+    for (let i = 0; i < slides.length; i++) { 
+        slides[i].classList.remove('center');
+    } 
+    const centerIndex =  Math.floor((n + n + getSlidesPerView() - 1) / 2);
+    slides[centerIndex].classList.add("center");
 }
 
 function showDirection(direction) {

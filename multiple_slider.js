@@ -23,7 +23,7 @@ function showDirection(direction) {
       }
     }
   } else if (direction === 'next') {
-    if (currentSlide >= slides.length - 1) {
+    if (currentSlide >= slides.length - 3) {
       document.querySelector('.next').disabled = true;
     } else {
       currentSlide++;
@@ -32,5 +32,7 @@ function showDirection(direction) {
     }
   }
 }
+
+
 
 
