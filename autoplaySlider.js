@@ -5,12 +5,12 @@ const slidesPerView = 3;
 
 function showSlide() {
     for (let i = 0; i < slides.length; i++) {
-        if (i >= currentSlide && i < currentSlide + slidesPerView) {
-          slides[i].classList.add('active');
-        } else {
-          slides[i].classList.remove('active');
-        }
+      if (i >= currentSlide && i < currentSlide + slidesPerView) {
+        slides[i].classList.add('active');
+      } else {
+        slides[i].classList.remove('active');
       }
+    }
 }
 
 function showDirection(direction) {
@@ -35,17 +35,28 @@ function showDirection(direction) {
   }
 }
 
-
 function nextSlide() {
-  currentSlide++;
-  console.log(currentSlide);
-  if (currentSlide >= slides.length || currentSlide === slides.length - 3) {
+  if (currentSlide >= slides.length - slidesPerView) {
     currentSlide = 0;
+  } else {
+    currentSlide++;
   }
-  showSlide(currentSlide);
+  showSlide();
 }
 
-const autoplay = setInterval(nextSlide, 2000);
+showSlide();
 
+let autoplayEnabled = true;
+let autoplayInterval;
 
+function toggleAutoplay(value) {
+  autoplayEnabled = value;
+  if (autoplayEnabled) {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextSlide, 2000);
+  } else {
+    clearInterval(autoplayInterval);
+  }
+}
 
+toggleAutoplay(autoplayEnabled);

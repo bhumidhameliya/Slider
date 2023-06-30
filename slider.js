@@ -4,9 +4,11 @@ var slides = document.getElementsByClassName('imageSlides');
 function showSlide(n) {
   for (var i = 0; i < slides.length; i++) {
     slides[i].classList.remove('active');
+    slides[i].classList.remove('fade-in-image');
   }
 
   slides[n].classList.add('active');
+  slides[n].classList.add('fade-in-image');
 }
 
 function previousSlide() {
