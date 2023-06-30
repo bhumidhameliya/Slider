@@ -51,6 +51,34 @@
       left: auto;
     }
 
+    .dots {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: black;
+}
+
     @media (max-width: 767px) {
         .image-slider {
             display: block;
@@ -74,6 +102,7 @@
                     <button class="next" onclick="showDirection('next')">></button>
                 </div>
             </div>
+            <div class="dots-container"></div>
         </div>
    
   <script src="autoplaySlider.js"></script>
