@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+    .slider-container {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    }
+
+    .image-slider {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    }
+
+    .imageslides {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+    }
+
+    img {
+      margin: auto;
+      display: block;
+      width: 500px;
+      height: 400px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .button-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    }
+
+    .button-container button {
+    margin: 5px;
+    }
+  
+  </style>
+  <body>
+    <div class="slider-container">
+        <div class="image-slider">
+            <div class="imageslides"><img src="image/s1.jpg" /></div>
+            <div class="imageslides"><img src="image/s2.jpg" /></div>
+            <div class="imageSlides"><img src="image/s3.jpg" /></div>
+            <div class="imageslides"><img src="image/s4.jpg" /></div>
+            <div class="imageslides"><img src="image/s5.jpg" /></div>
+            <div class="imageslides"><img src="image/s1.jpg" /></div>
+            <div class="imageslides"><img src="image/s2.jpg" /></div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="up-button">Up</button>
+        <button class="down-button">Down</button>
+    </div>
+  <script src="verticalSlider.js"></script>
+  </body>
+</html>

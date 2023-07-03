@@ -3,6 +3,7 @@ const slides = document.getElementsByClassName('imageslides');
 const slidesPerView = 3;
 const dotsContainer = document.querySelector('.dots-container');
 let slideIndex = 0;
+let dots = [];
 
 
 function showSlide() {
@@ -13,10 +14,12 @@ function showSlide() {
         slides[i].classList.remove('active');
       }
     }
+    updateDots();
 }
 
 function showDirection(direction) {
   if (direction === 'previous') {
+    console.log(currentSlide);
     if (currentSlide == 0) {
       document.querySelector('.previous').disabled = true;
     } else {
@@ -65,27 +68,32 @@ toggleAutoplay(autoplayEnabled);
 
 
 function createDots() {
-  const numSlides = slides.length;
-  for (let i = 0; i < numSlides - slidesPerView + 1; i++) {
+  dotsContainer.innerHTML = '';
+  dots = [];
+  const totalSlides = Math.ceil(slides.length - 2);
+  for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
     dot.addEventListener('click', () => {
-      slideIndex = i;
+      currentSlide = i;
       showSlide();
     });
+    dots.push(dot);
     dotsContainer.appendChild(dot);
   }
 }
 
 function updateDots() {
-  const dots = Array.from(dotsContainer.getElementsByClassName('dot'));
-  dots.forEach((dot, index) => {
-    if (index >= slideIndex && index < slideIndex + slidesPerView) {
-      dot.classList.add('active');
+  // const totalSlides = Math.ceil(slides.length / slidesPerView);
+  const activeDotIndex = Math.floor(currentSlide / 1);
+  for (let i = 0; i < dots.length; i++) {
+    if (i === activeDotIndex) {
+      dots[i].classList.add('active');
     } else {
-      dot.classList.remove('active');
+      dots[i].classList.remove('active');
     }
-  });
+  }
 }
 
 createDots();
+updateDots();
