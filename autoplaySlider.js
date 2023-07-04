@@ -70,7 +70,7 @@ toggleAutoplay(autoplayEnabled);
 function createDots() {
   dotsContainer.innerHTML = '';
   dots = [];
-  const totalSlides = Math.ceil(slides.length - 2);
+  const totalSlides = slides.length - 2;
   for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('span');
     dot.classList.add('dot');
@@ -84,7 +84,6 @@ function createDots() {
 }
 
 function updateDots() {
-  // const totalSlides = Math.ceil(slides.length / slidesPerView);
   const activeDotIndex = Math.floor(currentSlide / 1);
   for (let i = 0; i < dots.length; i++) {
     if (i === activeDotIndex) {
