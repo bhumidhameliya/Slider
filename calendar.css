@@ -20,14 +20,19 @@ header .current-date {
     font-size: 18px;
     font-weight: 600;
 }
-/* header span {
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
-    background: #f2f2f2;
-    text-align: center;
-    border-radius: 25px;
-} */
+.gototoday {
+    position: relative;
+    background: blue;
+    color: #fff;
+    border: none;
+    top: 10px;
+    left: 70%;
+    padding: 10px;
+}
+p#date {
+    padding-left: 20px;
+}
+
 .calender {
     padding: 20px;
 }
