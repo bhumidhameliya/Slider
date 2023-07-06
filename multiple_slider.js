@@ -18,65 +18,21 @@ function showDirection(direction) {
     } else {
       currentSlide--;
       if (currentSlide >= 0) {
+        document.querySelector('.next').disabled = false;
         showSlide();
       }
     }
   } else if (direction === 'next') {
-    if (currentSlide >= slides.length - 1) {
+    if (currentSlide >= slides.length - 3) {
       document.querySelector('.next').disabled = true;
     } else {
       currentSlide++;
+      document.querySelector('.previous').disabled = false;
       showSlide();
     }
   }
 }
 
-/*
-let currentSlide = 0;
-let a = 0;
 
-var slides = document.getElementsByClassName('imageSlides');
 
-function showSlide(n, a, d) {
-    if (d == 'next') {
-        for (var i = 0; i < a; i++) {
-            slides[i].classList.remove('active');
-        }
-        for (var i = a; i < n + 3; i++) {
-            slides[i].classList.add('active');
-        }
-    } else {
-        for (var i = a; i < n + 3; i++) {
-            slides[i].classList.remove('active');
-        }
-        for (var i = 0; i < a; i++) {
-            slides[i].classList.add('active');
-        }
-    }
-}
 
-function showDirection(direction) {
-    if (direction === 'previous') {
-        console.log("prev");
-        if (currentSlide === 0) {
-            document.getElementsByClassName("previous").disabled = true;
-        } else {
-            a = a + 3;
-            alert(a);
-            currentSlide = currentSlide + 3;
-            alert(currentSlide);
-            if (currentSlide >= 0) {
-                showSlide(currentSlide, a, direction);
-            }
-        }
-    } else if (direction === 'next') {
-        if (currentSlide >= slides.length - 1) {
-            document.getElementsByClassName("next").disabled = true;
-        } else {
-            a = a + 3;
-            currentSlide = currentSlide + 3;
-            showSlide(currentSlide, a, direction);
-        }
-    }
-}
-*/

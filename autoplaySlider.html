@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Slider</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+     .container {
+      position: relative;
+      max-width: 100%;
+      width: 1290px;
+      margin: 0 auto;
+    }
+    .imageSlides {
+      display: none;
+      margin: 0 15px;
+    }
+
+    .imageSlides.active {
+      display: block;
+    }
+
+    img {
+      margin: auto;
+      display: block;
+      width: 100%;
+      height: 400px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .image-slider {
+      display: inline-flex;
+      position: relative;
+    }
+    button {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 50px;
+      height: 50px;
+      background-color: #000;
+      color: #ffff;
+      border-radius: 50%;
+    }
+    .previous {
+      left: 0;
+      right: auto;
+    }
+    .next {
+      right: 0;
+      left: auto;
+    }
+
+    .dots {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: black;
+}
+
+    @media (max-width: 767px) {
+        .image-slider {
+            display: block;
+        }
+    }
+  
+  </style>
+  <body>
+    <h1>Auto Slider & dot add</h1>
+        <div class="container">
+            <div class="image-slider">
+                <div class="imageslides"><img src="image/s1.jpg" /></div>
+                <div class="imageslides"><img src="image/s2.jpg" /></div>
+                <div class="imageSlides"><img src="image/s3.jpg" /></div>
+                <div class="imageslides"><img src="image/s4.jpg" /></div>
+                <div class="imageslides"><img src="image/s5.jpg" /></div>
+                <div class="imageslides"><img src="image/s1.jpg" /></div>
+                <div class="imageslides"><img src="image/s2.jpg" /></div>
+                <div>
+                    <button class="previous" onclick="showDirection('previous')"><</button>
+                    <button class="next" onclick="showDirection('next')">></button>
+                </div>
+            </div>
+            <div class="dots-container"></div>
+        </div>
+   
+  <script src="autoplaySlider.js"></script>
+  </body>
+</html>

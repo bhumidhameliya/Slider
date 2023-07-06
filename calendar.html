@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Slider</title>
+        <link rel="stylesheet" type="text/css" href="calendar.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <button class="gototoday" onclick="currentdate()">Go to today</button>
+            <header>
+                <div class="doubleLeft" id="doubleLeft"><<</div>
+                <span class="left" id="left"><</span>
+                <p class="current-date"></p>
+                <span class="right" id="right">></span>
+                <div class="doubleRight" id="doubleRight">>></div>
+
+            </header>
+            <div class="calender">
+                <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="days"></ul>
+            </div>
+            <p id="date"></p>
+        </div>
+    <script src="calendar.js"></script>
+    </body>
+</html>

@@ -16,9 +16,8 @@
             display: block;
             width: 100%;
             height: 400px;
-            transition: opacity 0.5s ease-in-out;
+            /* transition: opacity 0.5s ease-in-out; */
         }
-        
         .image-slider {
             max-width: 600px;
             position: relative;
@@ -43,26 +42,31 @@
             right: 0;
             left: auto;
         }
+        .fade-in-image {animation: fadeIn 2s linear;}
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
     <script src="slider.js"></script>
     <body>
         <h1>slider</h1>
         <p></p>
         <div class="image-slider" >
-            <div class="imageslides active">
-                <img src="image/slider1.jpg">
+            <div class="imageslides active fade-in-image">
+                <img src="image/s1.jpg">
             </div>
             <div class="imageslides">
-                <img src="image/slider2.jpg">
+                <img src="image/s2.jpg">
             </div>
             <div class="imageSlides">
-                <img src="image/slider3.jpg">
+                <img src="image/s3.jpg">
             </div>
             <div class="imageslides">
-                <img src="image/slider4.jpg">
+                <img src="image/s4.jpg">
             </div>
             <div class="imageslides">
-                <img src="image/slider5.jpg">
+                <img src="image/s5.jpg">
             </div>
             <button class="previous" onclick="previousSlide()"><</button>
             <button class="next" onclick="nextSlide()">></button>
